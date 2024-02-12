@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-il8u36z5h$q8bnst+f5$mn*ee9vzupr*pz@z7m#xw*c=2@@k7h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app','127.0.0.1:8000']
 
 
 # Application definition
@@ -143,3 +143,11 @@ AUTH_USER_MODEL = "authentication.User"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 # CRISPY_TEMPLATE_PACK = 'bootstrap4'
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+STATIC_URL = '/static/'
+
+# Define the directory where static files will be collected during deployment
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
